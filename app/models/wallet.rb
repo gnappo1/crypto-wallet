@@ -6,3 +6,4 @@ class Wallet < ActiveRecord::Base
     has_many :coins, through: :coinwallets
     has_secure_password
 end
+
