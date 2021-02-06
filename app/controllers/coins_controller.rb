@@ -1,13 +1,12 @@
 class CoinsController < ApplicationController
+  before("/coins") do
+    redirect_if_not_logged_in if request.path_info != "/login"
+  end
 
   # GET: /coins
   get "/coins" do
+    redirect_if_not_logged_in
     erb :"/coins/index.html"
-  end
-
-  # GET: /coins/new
-  get "/coins/new" do
-    erb :"/coins/new.html"
   end
 
   # POST: /coins
