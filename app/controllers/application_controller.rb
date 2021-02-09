@@ -30,9 +30,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_not_logged_in
-      if !logged_in?
-        redirect "/login"
-      end
+        redirect "/login" if !logged_in?
     end
 
     def not_the_owner?(obj)

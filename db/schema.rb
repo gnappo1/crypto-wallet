@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_203051) do
+ActiveRecord::Schema.define(version: 2021_02_09_204617) do
 
   create_table "coins", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_203051) do
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "symbol"
   end
 
   create_table "coinwallets", force: :cascade do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_203051) do
     t.date "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
   create_table "wallets", force: :cascade do |t|
