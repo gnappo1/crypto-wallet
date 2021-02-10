@@ -1,1 +1,12 @@
 <h1>Coins</h1>
+
+<div class="row coins-list">
+    <% if @coins.length > 0 %>
+            <% @coins.each do |coin| %>
+                <div class="col-md-4 coin-item" style="background: url(<%= coin.avatar%>) no-repeat;">
+                    <a href="/coins/<%= coin.id%>"><%= coin.name %> - (<%= coin.symbol%>)</a>
+                </div>
+            <% end %>
+    <% else %>
+    <% end %>
+</div>

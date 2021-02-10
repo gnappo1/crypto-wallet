@@ -20,7 +20,7 @@ class Scraper
             value = row.css("td:nth-child(5) div a").text.gsub(/[$,]/, "") if row.css("td:nth-child(5) div a")
             avatar = row.css("td:nth-child(2) img").attr("src").value if row.css("td:nth-child(2) img").attr("src")
             # binding.pry
-            Coin.create(name: name, value: value, avatar: avatar)
+            Coin.create(name: name, value: value, avatar: avatar, symbol: symbol)
         end
     end
 

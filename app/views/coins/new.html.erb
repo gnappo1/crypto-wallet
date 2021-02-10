@@ -1,1 +1,39 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<% if flash[:error] %>
+    <div class="errors flash fatal">
+        <h4 class="error"><%= flash[:error] %></h4>
+    </div>
+<% end %>
+
+<h1>Create a new coin</h1>
+
+<!-- The steps involved should be:
+
+Couple more additions that the docs do not mention:
+
+2. Your form will run into issues actually accessing the file as anything more than a string filename if you do not include the following property:
+enctype="multipart/form-data"
+#I.e. in our case the form tag will be <form action="/coins" method="post" enctype="multipart/form-data">-->
+
+<div class="form-container">
+    <form action="/coins" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="coin[name]" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="value">Value</label>
+            <input type="text" id="value" name="coin[value]" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="symbol">Symbol</label>
+            <input type="text" id="symbol" name="coin[symbol]" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <input type="file" id="avatar" name="coin[avatar]" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create">
+        </div>
+    </form>
+</div>
