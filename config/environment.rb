@@ -7,10 +7,15 @@ require 'dotenv/load'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 
+CarrierWave.configure do |config|
+  config.root = "."
+end
+
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
+
 
 require './app/controllers/application_controller'
 require_all 'app'

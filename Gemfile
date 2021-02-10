@@ -7,7 +7,7 @@ gem 'rake'
 gem 'require_all'
 gem 'thin'
 gem 'shotgun'
-gem 'bcrypt'
+gem 'bcrypt', '~>3.1.16'
 gem 'dotenv'
 gem 'sinatra-flash'
 gem 'carrierwave', "~> 2.0"
