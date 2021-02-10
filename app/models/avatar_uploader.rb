@@ -8,4 +8,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     def store_dir
         'public/images'
     end
+
+    def cache_dir
+        'public/images/tmp'
+    end
 end
