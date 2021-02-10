@@ -1,5 +1,5 @@
 class Coin < ActiveRecord::Base
-    #mount_uploader :avatar, AvatarUploader since I removed the functionality for a user to create coins
+    mount_uploader :avatar, AvatarUploader #since I removed the functionality for a user to create coins
     has_many :coinwallets
     has_many :wallets, through: :coinwallets
     validates :name, presence: true, uniqueness: true

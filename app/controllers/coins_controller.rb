@@ -11,21 +11,21 @@ class CoinsController < ApplicationController
   end
 
   
-  # get "/coins/new" do
-  #   erb :"coins/new.html"
-  # end
+  get "/coins/new" do
+    erb :"coins/new.html"
+  end
   
   # POST: /coins
-  # post "/coins" do
-  #   coin = Coin.create(params["coin"])
-  #   if coin.valid?
-  #     flash[:success] = "Successfully created coin!"
-  #     redirect "/coins"
-  #   else
-  #     flash[:error] = coin.errors.full_messages.join(", ")
-  #     redirect "/coins/new"
-  #   end
-  # end
+  post "/coins" do
+    coin = Coin.create(params["coin"])
+    if coin.valid?
+      flash[:success] = "Successfully created coin!"
+      redirect "/coins"
+    else
+      flash[:error] = coin.errors.full_messages.join(", ")
+      redirect "/coins/new"
+    end
+  end
 
   # GET: /coins/5
   get "/coins/:id" do
